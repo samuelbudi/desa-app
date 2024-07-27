@@ -13,6 +13,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Styles -->
+    @livewireStyles
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <style>
 
     </style>
@@ -20,39 +23,7 @@
 </head>
 
 <body>
-    <nav class="border-gray-200 dark:bg-gray-900" style="--tw-bg-opacity: 1;
-    background-color: rgba(105,23,23, var(--tw-bg-opacity));">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">SITOLUHTA</span>
-            </a>
-            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden " aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                    <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
-                    <li>
-                        <a href="/" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0" aria-current="page">HOME</a>
-                    </li>
-                    <li>
-                        <a href="/umkm" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0">UMKM</a>
-                    </li>
-                    <li>
-                        <a href="/wilayah" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0">WILAYAH</a>
-                    </li>
-                    <li>
-                        <a href="/wisata" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0">WISATA</a>
-                    </li>
-                    <li>
-                        <a href="/tentangkami" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-200 md:p-0">TENTANG KAMI</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('layout.header')
     <div class="col justify-center flex items-center py-5" style="color:white; background-image: url(img/Aset2.jpg); min-height:400px; background-repeat: no-repeat; background-size: cover;">
         <div class="text-white my-5">
             <h1 class="font-bold text-4xl" style="text-align: center;">Negeri Indah Kepingan Surga</h1>
@@ -72,7 +43,7 @@
                     <div class="col-span-1">
                         @include('components.toc')
                         <div href="#" class="block p-6 bg-white border border-gray-200 rounded-lg shadow my-2">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Informasi Lainnya</h5>
+                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">Informasi Lainnya</h5>
                             <div>
                                 <ul class="text-blue-700">
                                     <li class="mb-2 ">

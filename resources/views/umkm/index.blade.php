@@ -29,15 +29,18 @@
             </div>
         </div>
     </div>
+    
     <div class="flex justify-between mb-4 border-b-4">
         <h1 class="text-5xl font-bold mb-4">UMKM</h1>
+        @if (Auth::check())
         <a href="/umkm/create" class="bg-red-900 text-white px-4 py-2 rounded-lg hover:bg-red-800 mb-4 h-fit">
             Tambah UMKM
         </a>
+        @endif
     </div>
     <div class="grid grid-cols-2 gap-10 p-6">
         @foreach($umkm as $item)
-            <a href="/umkm/{{ $item->id }}" class="bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 h-72 w-72 overflow-hidden">
+            <a href="/umkm/{{ $item->id }}" class="bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 h-72 w-72 overflow-hidden">
                 @if($item->images->isNotEmpty())
                 @php
                     $firstImage = $item->images->first();
